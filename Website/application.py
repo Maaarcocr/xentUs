@@ -9,8 +9,8 @@ from flask import Flask, request, render_template, jsonify
 from werkzeug import secure_filename
 import boto3
 ALLOWED_EXTENSIONS = set(['mp3', 'wav'])
-BASE_URL = 'https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-861661283536/audios/'
-BUCKET = 'elasticbeanstalk-us-west-2-861661283536'
+BASE_URL = 'https://s3-us-west-2.amazonaws.com/BUCKETNAME/audios/'
+BUCKET = 'BUCKETNAME'
 application = Flask(__name__)
 
 def allowed_file(filename):
