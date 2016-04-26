@@ -1,0 +1,21 @@
+<ion-view class="bg">
+    <div class="bar bar-header bar-positive">
+        <div class="title">Feedback</div>
+    </div>
+    <ion-content class="has-header">
+        <form name="myForm" novalidate>
+            <div class="list card">
+                <div class="item item-divider item-icon-right">
+                   	<div class="row">
+						<div class="col col-80">Feedback {{index}}</div>
+						<div class="col col-20">
+							<button class="button button-icon icon ion-arrow-right-b" ng-click="play()" ng-disabled="!playing"></button>
+						</div>
+					</div>
+                </div>
+                <textarea type="text" style="width:100%; resize:none; max-height: 300px;" rows="10" placeholder="Feedback" name="name" ng-model="feedback" required class="item"></textarea>
+                <button class="button button-full  no-margin item button-stable" ng-disabled="myForm.$invalid" ng-click="submitFeedback(feedback); feedback = '';">Submit</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

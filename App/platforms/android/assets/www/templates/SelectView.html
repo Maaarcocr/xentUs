@@ -1,0 +1,15 @@
+<ion-view view-title="select bg" >
+    <div class="bar bar-header bar-positive">
+        <button class="button button-clear icon ion-chevron-left" ng-click="out()" ui-sref="start"></button>
+        <h1 class="title">Select an audio file</h1>
+    </div>
+    <ion-content class="has-header bg">
+        <div class="row" ng-show="loading">
+            <div class="col-offset-33 col-33">
+                <ion-spinner class="col col-33 col-offset-33"></ion-spinner>
+            </div>
+        </div>
+        <div ng-repeat="track in tracks" class="card" >
+            <p class="item" ui-sref="audioPlayer({title: track.$id})" ui-sref-opts="{reload:true}">{{track.title}}{{track.$loaded()}}</p>
+        </div>
+</ion-view>

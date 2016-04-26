@@ -1,0 +1,24 @@
+<div class="bg">
+    <ion-view view-title="start" class="view center">
+        <div class="col view center">
+            <!--img class="row center pad" ng-src="img/xentUs.png" style="max-width: 80%"-->
+            <img class="row center pad" ng-src="img/xentUs.png" style="max-width:80%">
+            <form name="myForm" novalidate>
+                <div class="list list-inset center bottom">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Full Name" name="name" ng-model="name" required>
+                    </label>
+                    <label class="item item-input">
+                        <input type="text" placeholder="Language" name="lang" ng-model="lang" required>
+                    </label>
+                    <label class="item item-input">
+                        <input type="text" placeholder="City" name="city" ng-model="city" required>
+                    </label>
+                    <label>
+                        <a href="#/select"><button class="button button-full button-royal no-margin" ng-disabled="myForm.$invalid" ng-click="submit()">Submit</button></a> 
+                    </label>
+                </div>
+            </form>
+        </div>
+    </ion-view>    
+</div>
