@@ -1,0 +1,19 @@
+<div>
+	<a href="#/login" class="loginimg">
+		<img src="static/img/login.png" class="loginimg" ng-show="!getLog">
+	</a>
+	<a href="#/" class="backButton" ng-show="getLog">
+		<img src="static/img/home.png" class="backButton" style="width: 55px; top: 6%">
+	</a>
+	<a href="#/clicks" class="backButton" style="width: 55px; display: block;" ng-show="getLog">
+		<img class="backButton" style="width: 55px;" src="static/img/back.png">
+	</a>
+	<div style="position: fixed; left: 20%; top: 10%;">
+		<div ng-show="getLog ">
+			<p ng-repeat="data in list"> {{ user.name }} : {{ user.audio }} : {{user.city}} : {{user.language}} : {{ data.position }} : {{ data.text }}</p>
+		</div>
+		<div ng-show="!getLog">
+				<p class="welcome">Hey there! Seems like you are not logged in. Please log in.</p>
+		</div>
+	</div>
+</div>

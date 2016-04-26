@@ -1,0 +1,21 @@
+<div>
+	<a href="#/login" class="loginimg">
+		<img src="static/img/login.png" class="loginimg" ng-show="getLog != 'True'">
+		<img src="static/img/logout.png" class="loginimg" ng-show="getLog == 'True'">
+	</a>
+	<div class="logoContainer">
+			<img src="static/img/xentUs.png" class="logo">
+		</div>
+		<div class="central">
+			<div ng-show="getLog" style="width: 500px;">
+				<button type="button" class="button" style="border-bottom: 0;" id="upload" ng-click="goToFiles()">Manage Your Files</button>
+				<button type="button" class="button"  id="feedback" ng-click="goToFeedback()">Feedback</button>
+			</div>
+			<div ng-show="!getLog">
+				<p class="welcome">Hey there! Seems like you are not logged in. Please log in.</p>
+			</div>
+		</div>
+</div>
+
+		
+		

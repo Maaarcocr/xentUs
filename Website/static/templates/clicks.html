@@ -1,0 +1,32 @@
+<div>
+	<a href="#/login" class="loginimg" ng-show="!getLog">
+		<img src="static/img/login.png" class="loginimg">
+	</a>
+	<a href="#/" class="backButton" ng-show="getLog">
+		<img src="static/img/home.png" class="backButton" style="width: 55px; top: 6%">
+	</a>
+	<a href="#/rawData" class="loginimg" ng-show="getLog">
+		<img src="static/img/print.png" class="loginimg">
+	</a>
+	<a href="#/feedback" class="backButton" style="width: 55px; display: block;">
+		<img class="backButton" style="width: 55px;" src="static/img/back.png">
+	</a>
+	<div class="fileHeader">
+		<img src="static/img/xentUs.png" style="height: 76%;">
+	</div>
+	<div class="fileContainer">
+		<div ng-repeat="click in clicks" class="files" ng-show="getLog">
+			<h1>
+				Time : {{ click.position }}
+			</h1>
+			<div class="feedback">
+				<h2>
+					{{ click.text }}
+				</h2>
+			</div>
+		</div>
+		<div ng-show="!getLog" class="central">
+			<p class="welcome">Hey there! Seems like you are not logged in. Please log in.</p>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<div>
+	<a href="#/login" class="loginimg">
+		<img src="static/img/login.png" class="loginimg" ng-show="!getLog">
+	</a>
+	<div class="fileHeader">
+		<a href="#/" class="backButton" style="width: 55px; display: block;" ng-show="getLog">
+			<img class="backButton" style="width: 55px;" src="static/img/back.png">
+		</a>
+		<img src="static/img/xentUs.png" style="height: 76%;">
+	</div>
+	<div class="fileContainer" style="width: inherit;">
+		<table class="table" ng-show="getLog">
+				<tr style="border-bottom: 1.5px solid !important;">
+					<td style="width:88%"> <h2>Name</h2></td>
+					<td style="width:12%; opacity:0.5;" id="add" onmouseover="addOpac()" onmouseout="def()" upload-button url="/put" on-success="onSuccess(response)" class="btn btn-primary btn-upload"><h2>Add file   <i class="fa fa-plus-circle" aria-hidden="true"></i></h2></td>
+				</tr>
+				<tr ng-repeat="elem in songs" ng-click="save(elem.$id)" style="border-bottom: .5px dashed !important;">
+					<td style="width:88%;"> {{ elem.title }}</td>
+					<td style="width:12%; float:right;" ng-click="delete(elem.nameS3, elem.$id)"><a href=""><i class="fa fa-trash" aria-hidden="true" style="color:black"></i></a></td>
+				</tr>
+		</table>
+		<div ng-show="!getLog" class="central">
+			<p class="welcome">Hey there! Seems like you are not logged in. Please log in.</p>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,46 @@
+<div>
+	<a href="#/login" class="loginimg" ng-show="!getLog">
+		<img src="static/img/login.png" class="loginimg">
+	</a>
+	<a href="#/" class="backButton" ng-show="getLog">
+		<img src="static/img/home.png" class="backButton" style="width: 55px; top: 6%">
+	</a>
+	<a href="#/" class="backButton" style="width: 55px; display: block;" ng-show="getLog">
+		<img class="backButton" style="width: 55px;" src="static/img/back.png">
+	</a>
+	<div class="fileHeader">
+		<img src="static/img/xentUs.png" style="height: 76%;">
+	</div>
+	<div class="fileContainer" style="width: inherit;">
+		<div ng-show="getLog">
+			<table class="table">
+				<tr style="border-bottom: 1.5px solid !important;">
+					<td class="col"> <h2>Name</h2></td>
+					<td class="col"> <h2>City</h2></td>
+					<td class="col"> <h2>Language</h2></td>
+					<td class="col"> <h2>Audio File</h2></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr ng-repeat="elem in users" ng-click="save(elem.$id)" style="border-bottom: .5px dashed !important;">
+					<td class="col"> {{ elem.name }}</td>
+					<td class="col"> {{ elem.city }}</td>
+					<td class="col"> {{ elem.language }}</td>
+					<td class="col"> {{ elem.audio }}</td>
+					<td><a href="#/clicks"><img src="static/img/go.png" class="goArrow"></a></td>
+					<td ng-click="delete(elem.$id)"><a href=""><i class="fa fa-trash fa-2x" aria-hidden="true" style="color:black"></i></a></td>
+				</tr>
+			</table>
+		</div>
+		<div ng-show="!getLog" class="central">
+			<p class="welcome">Hey there! Seems like you are not logged in. Please log in.</p>
+		</div>
+	</div>
+</div>
+
+
+<!--<div class="files" ng-repeat="elem in users" ng-click="save(elem.$id); saveName(elem.Name)" style="min-height: 170px; color: black;">
+					<h1>{{ elem.Name }}</h1> 
+					<h3>{{ elem.Country}}</h3>
+					<h3>{{ elem.$id }}</h3>
+				</div>-->

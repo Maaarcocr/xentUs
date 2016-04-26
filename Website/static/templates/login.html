@@ -1,0 +1,33 @@
+<div>
+  <a href="#/" class="backButton" style="width: 55px; display: block;">
+    <img class="backButton" style="width: 55px;" src="static/img/back.png">
+  </a>
+  <div class="logoContainer">
+    <img src="static/img/xentUs.png" class="logo" style="height: 100%;">
+  </div>
+
+  <nav class="loginContainer" role="navigation">
+    <div class="container">
+      <form id="auth" class="navbar-form navbar-right collapse navbar-collapse" ng-controller="AuthCtrl">
+      <span ng-show="getLog">
+          <p id="signed_in_as" class="navbar-text navbar-right" ng-show="getLog">You are signed in.</p>
+          <button type="submit" class="btn btn-default loginButton" ng-click="auth.$logout(); denyAccess()">Sign Out</button>
+        </span>
+        <fieldset style="border: none;" ng-show="!getLog" ng-submit="signIn()">
+          <p class="welcome">Welcome to xentUs.</p>
+          <p class="welcome"> Please log in to access all the data.</p>
+          <div class="form-group" style="padding-top: 54px;">
+            <input type="email" class="form-control loginInput" placeholder="Email" ng-model="email" />
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control loginInput" placeholder="Password" ng-model="password" />
+          </div>
+          <button type="submit" class="btn btn-default loginButton" ng-click="signIn()">Sign In</button>
+          <p ng-show="error" style="margin-top: 40px;">Incorrect email or password.</p>
+        </fieldset>
+        
+      </form>
+      
+    </div>
+  </nav>
+</div>
